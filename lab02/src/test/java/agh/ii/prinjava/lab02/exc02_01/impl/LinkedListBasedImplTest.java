@@ -5,12 +5,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.Arrays;
 
-class LinkedListBasedImplTest {
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class ArrayBasedImplTest {
 
     // Create an empty stack
-    private final StackOfInts stackOfInts = StackOfIntsFtry.create(StackOfIntsFtry.Impln.L_LIST_B);
+    private final StackOfInts stackOfInts = StackOfIntsFtry.create(StackOfIntsFtry.Impln.ARRAY_B);
 
     @BeforeEach
     void setUp() {
@@ -23,5 +26,17 @@ class LinkedListBasedImplTest {
     @Test
     void newStackIsEmpty() {
         assertTrue(stackOfInts.isEmpty());
+    }
+
+    @Test
+    void test_addList() {
+        stackOfInts.push(2);
+        assertEquals(2,stackOfInts.peek());
+    }
+
+    @Test
+    void pop_test() {
+        stackOfInts.push(10);
+        assertEquals(10, stackOfInts.pop());
     }
 }

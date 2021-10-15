@@ -5,7 +5,7 @@ package agh.ii.prinjava.lab02.exc02_01;
  */
 
 public interface StackOfInts {
-    int pop();
+    int pop() throws Exception;
 
     void push(int x);
 
