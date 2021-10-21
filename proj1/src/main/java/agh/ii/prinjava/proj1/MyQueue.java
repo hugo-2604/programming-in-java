@@ -15,8 +15,11 @@ public interface MyQueue<E> {
 
     E peek();
 
+
     /** Consider pros and cons of having a factory method in the interface */
+
     static <T> MyQueue<T> create() {
         return new MyQueueDLLBImpl<>();
     }
 }
+
